@@ -43,7 +43,7 @@ def some_func():
     child.sendline('******')  # Собственно логин
     child.expect('assword:')
     child.sendline('******')  # Пароль
-    child.sendline('echo работает')  # ЗДЕСЬ команда. В данном случае reboot
+    child.sendline('reboot')  # ЗДЕСЬ команда reboot.
     child.sendline('exit')
     child.expect(pexpect.EOF)
     lbl = child.before.decode('utf-8')
@@ -54,6 +54,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = TestGui()
     window.setWindowTitle("D'Link")
-    window.setWindowIcon(QtGui.QIcon('/home/fil/pictures/icons/dlink.png'))
+    window.setWindowIcon(QtGui.QIcon('$HOME/icons/dlink.png'))
     window.show()
     sys.exit(app.exec_())
